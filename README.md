@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+# Welcome to the source for my blog
 
-You can use the [editor on GitHub](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+It is magically transformed by [Jekyll](https://jekyllrb.com/) in to a static site when content is pushed to this repoistory on GitHub.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## License
 
-### Markdown
+The following directoreis and their contents are copyright Tristan Griffiths. You may not reuse anything therein without my permission:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* \_posts/
+* images/
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+All other directories and files are MIT Licensed. Feel free to use the HTML and CSS as you please. If you do use them, a link back to https://github.com/monkeyatcomputer/monkeyatcomputer.github.io would be appreciated, but is not required.
