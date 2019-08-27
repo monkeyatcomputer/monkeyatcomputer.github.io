@@ -2,7 +2,7 @@
 highlighter: rogue
 name: tristangriffiths.net
 description: The personal blog of Tristan Griffiths - IT Jebus
-remote_theme: daattali/beautiful-jekyll
+remote_theme: mmistakes/minimal-mistakes
 url: "https://tristangriffiths.net"
 encoding: utf-8
 
