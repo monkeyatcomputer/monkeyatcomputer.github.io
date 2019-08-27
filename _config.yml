@@ -1,3 +1,12 @@
+# General Jekyll Config
+highlighter: rogue
+name: tristangriffiths.net
+description: The personal blog of Tristan Griffiths - IT Jebus
 remote_theme: daattali/beautiful-jekyll
+url: "https://tristangriffiths.net"
 encoding: utf-8
-theme: remote/beautiful-jekyll
+
+exclude: [LICENSE, CNAME, .gitignore, Genfile, Genfile.locl]
+
+# Build settings
+permalink: pretty
