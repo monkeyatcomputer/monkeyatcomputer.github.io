@@ -4,7 +4,7 @@ It is magically transformed by [Jekyll](https://jekyllrb.com/) in to a static si
 
 ## License
 
-The following directoreis and their contents are copyright Tristan Griffiths. You may not reuse anything therein without my permission:
+The following directories and their contents are copyright Tristan Griffiths. You may not reuse anything therein without my permission:
 
 * \_posts/
 * images/
