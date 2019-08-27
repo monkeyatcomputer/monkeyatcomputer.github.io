@@ -1,12 +1,66 @@
-# General Jekyll Config
-highlighter: rogue
-name: tristangriffiths.net
+# Site settings
+title: tristangriffiths.net
 description: The personal blog of Tristan Griffiths - IT Jebus
-remote_theme: mmistakes/minimal-mistakes
-url: "https://tristangriffiths.net"
+twitter_username: 
+github_username: monkeyatcomputer
+minimal_mistakes_skin: default
 encoding: utf-8
 
-exclude: [LICENSE, CNAME, README.md, .gitignore, Genfile, Genfile.locl]
-
 # Build settings
-permalink: pretty
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: "Australia/Melbourne"
+
+include: [ _pages ]
+
+# Exclude from processing
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, node_modules, vendor/bundle/, vendor/cache/, vendor/gems/, vendor/ruby/]
+
+# Plugins
+plugins: [jekyll-paginate, jekyll-sitemap, jekyll-gist, jekyll-feed, jemoji, jekyll-include-cache]
+
+author:
+  name: "Tristan Griffiths"
+  avatar: ""
+  bio: ""
+  links:
+    - label: "Blah"
+      icon: "fas fa-fw fa-link"
+      url: "https://"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
