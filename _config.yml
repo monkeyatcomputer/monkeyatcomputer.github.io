@@ -6,7 +6,7 @@ remote_theme: daattali/beautiful-jekyll
 url: "https://tristangriffiths.net"
 encoding: utf-8
 
-exclude: [LICENSE, CNAME, .gitignore, Genfile, Genfile.locl]
+exclude: [LICENSE, CNAME, README.md, .gitignore, Genfile, Genfile.locl]
 
 # Build settings
 permalink: pretty
