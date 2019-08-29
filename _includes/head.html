@@ -1,5 +1,34 @@
+{%- if site.url -%}
+  {%- assign seo_url = site.url | append: site.baseurl -%}
+{%- endif -%}
+{%- assign seo_url = seo_url | default: site.github.url -%}
+
 {%- if page.title -%}
   {%- assign seo_title = page.title | append: " " | append: title_separator | append: " " | append: site.title -%}
+{%- endif -%}
+
+{%- if seo_title -%}
+  {%- assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once -%}
+{%- endif -%}
+
+{% if page.canonical_url %}
+  {%- assign canonical_url = page.canonical_url %}
+{% else %}
+  {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
+{% endif %}
+
+{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
+{%- if seo_description -%}
+  {%- assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once -%}
+{%- endif -%}
+
+{%- assign author = page.author | default: page.authors[0] | default: site.author -%}
+{%- assign author = site.data.authors[author] | default: author -%}
+
+{%- if page.date -%}
+  {%- assign og_type = "article" -%}
+{%- else -%}
+  {%- assign og_type = "website" -%}
 {%- endif -%}
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -7,8 +36,8 @@
 <title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %} | tristangriffiths.net</title>
 <meta name="description" content="{{ seo_description }}"/>
 <meta name="keywords" content="{{ seo_keywords }}"/>
-<meta name="author" content="{{ author.name | default: author }}">
-<link href="/rss" rel="alternate" type="application/rss+xml" title="tristangriffiths.net" />
+{% if author.name %}<meta name="author" content="{{ author.name | default: author }}">{% endif %}
+{% feed_meta %}
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:locale" content="en_AU">
 <meta property="og:site_name" content="tristangriffiths.net">
