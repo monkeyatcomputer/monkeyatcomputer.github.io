@@ -2,6 +2,7 @@
 permalink: /windows-10-iot-adafruit-lpd8806-rgb-led-strip
 title: "Windows 10 IoT and Adafruit LPD8806 RGB LED Strip"
 subHeading: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
+description: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
 heroImage: "/assets/img/lpd8806.jpg"
 ---
 

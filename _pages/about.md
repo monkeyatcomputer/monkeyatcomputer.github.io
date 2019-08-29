@@ -2,6 +2,7 @@
 permalink: /about
 title: "About"
 subHeading: "It's not that interesting"
+description: "The personal blog of Tristan Griffiths - IT type person"
 heroImage: "/assets/img/home-hero.jpg"
 ---
 

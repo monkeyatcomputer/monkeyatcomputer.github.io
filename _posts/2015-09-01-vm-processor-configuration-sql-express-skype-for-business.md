@@ -2,6 +2,7 @@
 permalink: /vm-processor-configuration-sql-express-skype-for-business
 title: "VM Processor Configuration and SQL Server Express with Skype for Business (Lync)"
 subHeading: "A lesson in Microsoft licensing"
+description: "Using IIS application initialization feature to keep Skype for Business (Lync) web services running"
 heroImage: "/assets/img/vspherecores.png"
 ---
 

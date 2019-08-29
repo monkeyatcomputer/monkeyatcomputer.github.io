@@ -2,6 +2,7 @@
 permalink: /skype-for-business-lync-dhcp-for-cisco-ios
 title: "Skype for Business (Lync) device DHCP for Cisco IOS"
 subHeading: "Some PowerShell scripting"
+description: "PowerShell script to help configure Cisco IOS DHCP for Skype for Business and Lync devices"
 heroImage: "/assets/img/powershell.jpg"
 ---
 ### Introduction

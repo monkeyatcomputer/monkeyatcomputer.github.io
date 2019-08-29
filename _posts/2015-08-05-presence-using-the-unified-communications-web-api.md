@@ -2,6 +2,7 @@
 permalink: /presence-using-the-unified-communications-web-api
 title: "Presence using the Unified Communications Web API (UCWA) "
 subHeading: "More JSON than you can poke 6 authentication steps at"
+description: "More JSON than you can poke 6 authentication steps at"
 heroImage: "/assets/img/presence.jpg"
 ---
 

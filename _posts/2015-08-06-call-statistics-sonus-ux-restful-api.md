@@ -2,6 +2,7 @@
 permalink: /call-statistics-sonus-ux-restful-api
 title: "Call Statistics from Sonus UX 1000/2000 using the RESTful API"
 subHeading: "We all love statistics"
+description: "We all love statistics"
 heroImage: "/assets/img/sonus-monitor.jpg"
 ---
 

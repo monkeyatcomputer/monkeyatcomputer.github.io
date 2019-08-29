@@ -2,6 +2,7 @@
 permalink: /call-statistics-sonus-ux-restful-api
 title: "Skype for Business (Lync) Web Services Warmup"
 subHeading: "Application Initialisation is my new favourite Windows technology"
+description: "Using IIS application initialization feature to keep Skype for Business (Lync) web services running"
 heroImage: "/assets/img/iispreload.png"
 ---
 

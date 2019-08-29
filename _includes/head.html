@@ -4,7 +4,7 @@
 {%- assign seo_url = seo_url | default: site.github.url -%}
 
 {%- if page.title -%}
-  {%- assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title -%}
+  {%- assign seo_title = page.title | append: " \| " | append: site.title -%}
 {%- endif -%}
 
 {%- if seo_title -%}
@@ -33,9 +33,8 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<title>{{ seo_title }}</title>
 <meta name="description" content="{{ seo_description }}"/>
-<meta name="keywords" content="{{ seo_keywords }}"/>
 {% if author.name %}<meta name="author" content="{{ author.name | default: author }}">{% endif %}
 {% feed_meta %}
 <meta property="og:type" content="{{ og_type }}">
