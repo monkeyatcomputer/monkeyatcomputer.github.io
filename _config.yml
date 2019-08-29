@@ -32,7 +32,19 @@ exclude:
   - vendor/ruby/
 
 # Plugins
-plugins: [jekyll-paginate, jekyll-sitemap, jekyll-gist, jekyll-feed, jemoji, jekyll-include-cache]
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
 
 author:
   name: "Tristan Griffiths"
@@ -43,31 +55,20 @@ author:
 footer:
   links:
 
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
 defaults:
   - scope:
       path: ""
-    values:
-      layout: default
-  # _posts
-  - scope:
-      path: "_posts"
       type: posts
-    values:
-      layout: default
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
     values:
       layout: default
   - scope:
       path: "assets/img"
     values:
       image: true
-
-category_archive:
-  type: liquid
-  path: /categories
-tag_archive:
-  type: liquid
-  path: /tags
