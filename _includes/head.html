@@ -1,0 +1,61 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %} | tristangriffiths.net</title>
+<meta name="description" content="{{ seo_description }}"/>
+<meta name="keywords" content="{{ seo_keywords }}"/>
+<meta name="author" content="{{ author.name | default: author }}">
+<link href="/rss" rel="alternate" type="application/rss+xml" title="tristangriffiths.net" />
+
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:locale" content="en_AU">
+<meta property="og:site_name" content="tristangriffiths.net">
+<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+<meta property="og:url" content="{{ canonical_url }}">
+
+{% if page.excerpt %}
+  <meta property="og:description" content="{{ seo_description }}">
+{% endif %}
+
+{% if page_large_image %}
+  <meta property="og:image" content="{{ page_large_image }}">
+{% elsif page_teaser_image %}
+  <meta property="og:image" content="{{ page_teaser_image }}">
+{% endif %}
+
+{% if page.date %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+
+{% if og_type == "article" and page.last_modified_at %}
+  <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+{% endif %}
+
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% if paginator.previous_page %}
+  <link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">
+{% endif %}
+{% if paginator.next_page %}
+  <link rel="next" href="{{ paginator.next_page_path | absolute_url }}">
+{% endif %}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!-- Purdy Fonts CSS -->
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+<!-- Site -->
+<link href="/assets/css/site.min.css" rel="stylesheet" type="text/css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->

@@ -8,7 +8,6 @@ encoding: utf-8
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:title
 paginate: 5 # amount of posts to show
