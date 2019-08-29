@@ -63,6 +63,11 @@ defaults:
     values:
       layout: article
   - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: text-page
+  - scope:
       path: "assets/img"
     values:
       image: true

@@ -1,13 +1,7 @@
 ---
 permalink: /about
 title: "About"
-layout: text-page
-categories:
-  - Blog
-tags:
-  - Post Formats
-  - readability
-  - standard
+subHeading: "It's not that interesting"
 ---
 
 ## The Blog
