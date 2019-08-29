@@ -46,6 +46,11 @@ footer:
 defaults:
   - scope:
       path: ""
+    values:
+      layout: default
+  # _posts
+  - scope:
+      path: "_posts"
       type: posts
     values:
       layout: default
