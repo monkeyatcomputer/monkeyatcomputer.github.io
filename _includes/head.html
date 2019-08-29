@@ -4,7 +4,7 @@
 {%- assign seo_url = seo_url | default: site.github.url -%}
 
 {%- if page.title -%}
-  {%- assign seo_title = page.title | append: " " | append: title_separator | append: " " | append: site.title -%}
+  {%- assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title -%}
 {%- endif -%}
 
 {%- if seo_title -%}
