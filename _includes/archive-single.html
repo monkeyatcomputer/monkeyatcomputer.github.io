@@ -1,0 +1,18 @@
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% assign subHeading = post.subHeading | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+  {% assign subHeading = post.subHeading %}
+{% endif %}
+<div class="post-preview">
+    <article itemscope itemtype="https://schema.org/CreativeWork">
+        <a href="{{ post.url | relative_url }}" rel="permalink">
+            <h2 class="post-title">{{ title }}</h2>
+        </a>
+        <h3 class="post-subtitle">{{ subHeading }}</h3>
+
+        <p class="post-meta">Posted on</p>
+    </article>
+    <hr>
+</div>

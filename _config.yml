@@ -46,12 +46,6 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
-author:
-  name: "Tristan Griffiths"
-  avatar: ""
-  bio: ""
-  links:
-
 footer:
   links:
 
@@ -67,7 +61,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: default
+      layout: article
   - scope:
       path: "assets/img"
     values:
