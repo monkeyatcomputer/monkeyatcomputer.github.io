@@ -12,10 +12,14 @@
 <meta property="og:type" content="">
 <meta property="og:locale" content="en_AU">
 <meta property="og:site_name" content="tristangriffiths.net">
-<meta property="og:title" content="About">
+<meta property="og:title" content="VM Processor Configuration and SQL Server Express with Skype for Business (Lync)">
 <meta property="og:url" content="">
 
+  <meta property="og:description" content="">
 
+
+
+  <meta property="article:published_time" content="2015-09-01T00:00:00+10:00">
 
 
 <link rel="canonical" href="">
@@ -68,53 +72,62 @@
 	</nav>
 	
 	<!-- Page Header -->
-<header class="intro-header" style="background-image: url('/assets/img/home-hero.jpg')">
+<header class="intro-header" style="background-image: url('/assets/img/vspherecores.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="page-heading">
-                    <h1>About</h1>
-                    <hr class="small">
-                    <span class="subheading">It's not that interesting</span>
+                <div class="post-heading">
+                    <h1 id="title">VM Processor Configuration and SQL Server Express with Skype for Business (Lync)</h1>
+                    <h2 class="subheading">A lesson in Microsoft licensing</h2>
+                    <span class="meta">Posted on September 01, 2015</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h2 id="the-blog">The Blog</h2>
+<!-- Post Content -->
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="name" content="VM Processor Configuration and SQL Server Express with Skype for Business (Lync)" />
+    <meta itemprop="headline" content="A lesson in Microsoft licensing" />
+    <meta itemprop="datepublished" content="September 01, 2015">
+    
+    <meta itemprop="image" content="/assets/img/vspherecores.png" />	
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" itemprop="articleBody">
+                <h3 id="problem">Problem</h3>
+<p>While investigating an SQL issue with a customers Lync environment, discovered the following in the local SQL Express instance error logs:</p>
 
-<p>Always appreciative of the knowledge freely given by others while trawling the internet for random error messages, this blog is my attempt to give something back.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL Server detected 8 sockets with 1 cores per socket and 1 logical processors per socket, 8 total logical processors; using 1 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
+</code></pre></div></div>
 
-<p>… and so a blog is born. Hope you find some wisdom.</p>
+<p>Hmmm. That’s a little strange. You’re only using a single processor on a 8 core virtual machine.</p>
 
-<h2 id="the-protagonist">The Protagonist</h2>
+<p>Quick check of the capacity limits of SQL Server Express:</p>
 
-<p><img style="float: right;" src="/assets/img/selfie.png" alt="Me" />Have been around computers from a very early age and so was doomed to end up in IT. Before getting my first Pentium II 233MHz, there was always a <a href="https://en.wikipedia.org/wiki/BBC_Micro">BBC Micro</a>, <a href="https://en.wikipedia.org/wiki/Acorn_Archimedes">Archimedes</a>, A4 or <a href="https://en.wikipedia.org/wiki/RiscPC">RiscPC</a> kicking around. Does anyone still argue over <a href="https://www.google.com.au/search?q=cisc+vs+risc">CISC vs RISC</a>?</p>
+<p><a href="https://msdn.microsoft.com/en-AU/library/ms143760(v=sql.120).aspx" title="https://msdn.microsoft.com/en-AU/library/ms143760(v=sql.120).aspx">https://msdn.microsoft.com/en-AU/library/ms143760(v=sql.120).aspx</a></p>
 
-<p>Working with Windows, Skype for Business, Lync, Office 365, Exchange, Azure, HTML, CSS, MSSQL, IIS, Microsoft.NET, Visual Studio, C#, Sonus, AudioCodes, Polycom, Pexip and many other technologies keeps me sane.</p>
+<p>Little bit confusing but I read “Limited to lesser of 1 Socket or 4 cores” to mean that SQL Server Express is limited to a single socket and no more than 4 cores.</p>
 
-<h2 id="the-day-job">The Day Job</h2>
+<p>This customer had configured their VMware guest as a single socket per core based on this advice:</p>
 
-<p>Based in Melbourne Australia and, since 2011, a solutions consultant at <a href="https://www.generation-e.com.au/">Generation-e</a>, a leading Microsoft communications partner and reluctant accomplice.</p>
+<p><a href="https://blogs.vmware.com/vsphere/2013/10/does-corespersocket-affect-performance.html" title="https://blogs.vmware.com/vsphere/2013/10/does-corespersocket-affect-performance.html">https://blogs.vmware.com/vsphere/2013/10/does-corespersocket-affect-performance.html</a></p>
 
-<h2 id="the-disclaimer">The Disclaimer</h2>
+<p>Not usually a bad idea except when licensing restrictions require a different configuration.</p>
 
-<p>All content on this “tristangriffiths.net” blog is for informational purposes only. The owner of this blog makes no representations as to the accuracy or completeness of any information found on this site or any found by following links on this site.</p>
+<h3 id="solution">Solution</h3>
+<p>After a scheduled outage and some reconfiguration, our SQL Server Express instances have access to the expected number of cores:</p>
 
-<p>The owner of “tristangriffiths.net” will not be liable for any errors or omissions in this information nor for the availability of this information. The owner will not be liable for any losses, injuries, or damages from the display or use of this information.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL Server detected 2 sockets with 4 cores per socket and 4 logical processors per socket, 8 total logical processors; using 4 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
+</code></pre></div></div>
 
-<p>Any and all statements and opinions expressed are solely my own and do not represent that of any organization I may be employed by, contracted to, or any organisation tied to the products, solutions or technologies discussed.</p>
+<p>Customer reports presence is being updated normally and SQL errors appear to have disappeared.</p>
 
-<p>For any questions related to this site, my email address is tgriffiths@gmail.com.</p>
-
+            </div>
         </div>
     </div>
-</div>
+</article>
 
 	<!-- Footer -->
 	<footer>

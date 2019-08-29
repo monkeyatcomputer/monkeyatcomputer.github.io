@@ -2,13 +2,14 @@
 layout: default
 ---
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/assets/img/home-hero.jpg')">
-<div class="container">
+<header class="intro-header" style="background-image: url('{{ page.heroImage }}')">
+    <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <h1 id="title">{{page.title }}</h1>
                     <h2 class="subheading">{{ page.subHeading }}</h2>
+                    <span class="meta">Posted on {{ page.date | date: "%B %d, %Y" }}</span>
                 </div>
             </div>
         </div>
@@ -19,8 +20,9 @@ layout: default
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <meta itemprop="name" content="{{ page.title }}" />
     <meta itemprop="headline" content="{{ page.subHeading }}" />
-    <meta itemprop="datepublished" content="" />
-    <meta itemprop="image" content="/assets/img/hero-home.jpg" />			
+    {% if page.date %}<meta itemprop="datepublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="datemodified" content="{{ page.last_modified_at | date: "%B %d, %Y" }}">{% endif %}
+    <meta itemprop="image" content="{{ page.heroImage }}" />	
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" itemprop="articleBody">
