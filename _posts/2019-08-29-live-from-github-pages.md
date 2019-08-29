@@ -6,7 +6,7 @@ description: "Yet another blog running on GitHub pages with Jekyll"
 heroImage: "/assets/img/home-hero.jpg"
 ---
 
-Got tired of keeping Windows, Umbraco and Let Encrypt running.
+Got tired of keeping Windows, Umbraco and Let's Encrypt running smoothly.
 
 Sorry [Umbraco](https://umbraco.com/ "Umbraco"). You wowed me with your abilities but I'm just not that kinda person anymore.
 
