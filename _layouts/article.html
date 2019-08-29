@@ -7,8 +7,8 @@ layout: default
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1 id="title">{{ title }}</h1>
-                    <h2 class="subheading">{{ subHeading }}</h2>
+                    <h1 id="title">{{page.title }}</h1>
+                    <h2 class="subheading">{{ page.subHeading }}</h2>
                 </div>
             </div>
         </div>
@@ -17,10 +17,10 @@ layout: default
 
 <!-- Post Content -->
 <article itemscope itemtype="http://schema.org/BlogPosting">
-    <meta itemprop="name" content="{{ title }}" />
-    <meta itemprop="headline" content="{{ subHeading }}" />
+    <meta itemprop="name" content="{{ page.title }}" />
+    <meta itemprop="headline" content="{{ page.subHeading }}" />
     <meta itemprop="datepublished" content="" />
-    <meta itemprop="image" content="https://tristangriffiths.net/assets/img/hero-home.jpg" />			
+    <meta itemprop="image" content="/assets/img/hero-home.jpg" />			
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" itemprop="articleBody">
