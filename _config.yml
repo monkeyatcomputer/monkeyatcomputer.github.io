@@ -1,9 +1,7 @@
 # Site settings
 title: tristangriffiths.net
 description: The personal blog of Tristan Griffiths - IT Jebus
-twitter_username: 
-github_username: monkeyatcomputer
-minimal_mistakes_skin: default
+title_separator: "|"
 encoding: utf-8
 
 # Build settings
