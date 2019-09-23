@@ -44,16 +44,6 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
-footer:
-  links:
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
-
 defaults:
   - scope:
       path: ""
