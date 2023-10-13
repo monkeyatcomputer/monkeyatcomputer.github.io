@@ -8,7 +8,7 @@ image:
   alt: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
 ---
 
-### Introduction
+## Introduction
 
 I got one metre of the [Adafruit LPD8806 RGB LED strip](http://www.adafruit.com/product/306 "DIGITAL RGB LED WEATHERPROOF STRIP - LPD8806 32 LED") with a [NetDuino Plus 2](http://www.netduino.com/netduinoplus2/ "Netduino Plus 2") many years ago with bold visions of colourful Christmas decorations on the front of the house. After some success with blinding myself, they were forgotten about when child #1 arrived. The NetDuino suffered the same fate as it couldn't talk HTTPS.
 
@@ -16,7 +16,7 @@ When Microsoft announced they would support Windows 10 IoT on the new Raspberry 
 
 The code is a shameless hack job of the [netduino helpers](http://netduinohelpers.codeplex.com/ "netduino Helpers") project on CodePlex. I've stripped it down to just setting static colours across all of the LED's. I am not planning any animations yet.
 
-### Hardware
+## Hardware
 
 *   Raspberry Pi 2 Model B - [Element 14](http://au.element14.com/raspberry-pi/raspberrypi-2-modb-1gb/sbc-raspberry-pi-2-model-b-1gb/dp/2461030 "RASPBERRYPI-2-MODB-1GB").
 *   2A Micro-USB power supply - [Element 14](http://au.element14.com/pro-power/psu-raspberry-pi-2a-5v/psu-raspberry-pi-5v-2a-micro-usb/dp/2444596 "PSU-RASPBERRY-PI-2A-5V").
@@ -26,7 +26,7 @@ The code is a shameless hack job of the [netduino helpers](http://netduinohelper
 *   Female DC Power adapter - [Adafruit](http://www.adafruit.com/products/368 "Female DC Power adapter")
 *   Jumper wires
 
-### Wiring
+## Wiring
 
 Already had wires soldiered to the LED strip from previous experiments ([Adafruit tutorial](https://learn.adafruit.com/digital-led-strip/wiring "Digital RGB LED Strip Wiring")), so all I needed was the [Raspberry Pi 2 pinout diagram](https://ms-iot.github.io/content/en-US/win10/samples/PinMappingsRPi2.htm "Raspberry Pi 2 Pin Mappings") on the [Windows IoT site](http://go.microsoft.com/fwlink/p/?LinkID=534186 "Windows IoT Home"):
 
@@ -35,7 +35,7 @@ Already had wires soldiered to the LED strip from previous experiments ([Adafrui
 *   Connect the green data wire (DI) to the SPI0 MOSI (PIN 19) of the RPi2.
 *   Connect the red +5V power wire to your power supply.
 
-### Initialisation Code
+## Initialisation Code
 
 Here is the C# code for the top-level constructor and initialisation function. Have had to move SPI initialisation to its own method so we can handle the async calls.
 
@@ -97,7 +97,7 @@ public class AdaFruitLPD8806 : IDisposable
 
 Next, we take a closer look at the SPI initialisation function.
 
-#### InitSpi()
+### InitSpi()
 
 The SPI bus on the Raspberry Pi 2 is used to send a byte array of encoded RGB levels for each of the LEDs on the string and needs to be configured before we can use it.
 
@@ -126,11 +126,11 @@ private async Task InitSpi()
 *   More device discovery.
 *   Create the SpiDevice using the settings and bus controller.
 
-### All The Colours
+## All The Colours
 
 Now that the SPI device is initialised, we can send some bytes to our LED strip. We only need two functions to do most of the work.
 
-#### SetColor()
+### SetColor()
 
 ```csharp
 // Sets the color of the entire strip
@@ -147,7 +147,7 @@ public void SetColor(byte red, byte green, byte blue)
 *   We first set up our "Background" array with each of our 8-bit colour values. We use the gamma dictionary lookup (RedGamma, GreenGamma, BlueGamma) so the colours look "correct" and to convert the 8-bit colour in to the 7-bit colour supported by the LPD8806 chip.
 *   Next, we copy the background colour array over to our pixel buffer that will be written to SPI in the Refresh() method.
 
-#### Refresh()
+### Refresh()
 
 ```csharp
 // Send the internal pixel buffer to the strip
@@ -171,7 +171,7 @@ public void Refresh()
 *   Write our pixel buffer.
 *   Latch written bytes by sending zeros to each pixel (* 2).
 
-### Pretty
+## Pretty
 
 Took a flash photo and forgot about the Raspberry Pi 2's kryptonite. Windows IoT failed hard. Need to get a Pi case.
 
@@ -183,6 +183,6 @@ A basic XAML GUI with Caliburn.Micro and Autofac.
 ![Windows IoT](/assets/img/lpd8806-ui.jpg)
 _Windows IoT XAML GUI_
 
-### Download
+## Download
 
 My [scrappy LPD8806 class](/assets/misc/adafruitlpd8806.zip "AdaFruitLPD8806.zip").

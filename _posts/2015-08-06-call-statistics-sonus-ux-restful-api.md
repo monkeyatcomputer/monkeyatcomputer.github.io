@@ -6,7 +6,7 @@ description: "We all love statistics"
 image: "/assets/img/sonus-monitor.jpg"
 ---
 
-### Introduction
+## Introduction
 
 Challenged to collect call statistics from our Sonus UX 1000 SBC the first thought was to use SNMP. After enabling SNMP and pointing an SNMPwalk tool with MIB to the SBC, I struggled to find anything useful that could be used by our monitoring software with its native SNMP sensor. Why taunt me with your call counters in the web administration interface and not expose them through SNMP?
 
@@ -18,36 +18,36 @@ My colleagues have been using the Sonus UX REST API and PowerShell to load up co
 
 This is what I ended up with.
 
-### The Script
+## The Script
 
 Nothing much to it.
 
-```
+```powershell
 .\Get-SonusUxCallCounters.ps1 -Username "restuser" -Password "restpassword" -ServerFqdn "sbc.contoso.com" -Type SIP -Id 1
 ```
 
 Type can be SIP, ISDN or CAS.
 
-### PRTG
+## PRTG
 
 Choose the "EXE/Script Advanced" sensor type and fill in the settings:
 
-<div>![](/assets/img/prtg.png)</div>
+![PRTG](/assets/img/prtg.png)
 
 I've used the Linux username and password of the parent device to pass through the REST credentials.
 
 A little while later...
 
-### Stats!
+## Stats!
 
-<div>![](/assets/img/graph.png)</div>
+![Stats!](/assets/img/graph.png)
 
 Guess everyone went home around 5.30 :)
 
-<div>![](/assets/img/table.png)</div>
+![Happy Boss](/assets/img/table.png)
 
 That'll keep the boss entertained.
 
-### Download
+## Download
 
 Downoad [Get-SonusUxCallCounters.ps1](/assets/misc/get-sonusuxcallcounters.zip "Get-SonusUxCallCounters.ps1")

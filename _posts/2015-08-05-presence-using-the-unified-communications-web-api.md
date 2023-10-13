@@ -6,7 +6,7 @@ image:
   path: "/assets/img/presence.jpg"
 ---
 
-# Introduction
+## Introduction
 
 Since Lync Server 2013 Cumulative Update 1 (February 2013), it has been possible to use the Unified Communications Web API (UCWA) to provide web-based communications interactions with Lync users. Microsoft provide a set of JavaScript helper libraries but unfortunately they have forgotten about those of us that have other non-web based ideas.
 
@@ -28,7 +28,7 @@ The steps are:
 
 I'll be covering steps 2 to 6 as there is nothing special about the autodiscover URL.
 
-# Initialisation Code
+## Initialisation Code
 
 I'm using Caliburn.Micro and Autofac in my app meaning the constructor contains some IoC magic. The program flow is largely copied/ported from the Microsoft JavaScript helpers using the same state machine pattern.
 
@@ -86,9 +86,9 @@ internal class AuthenticationService : IAuthenticationService
 *   Prepare HttpClient for use. We're dealing with JSON here but we could just as easily set the MIME type for XML.
 *   Start our recursive state machine or throw an error if we haven't been given a web service URL.
 
-# State Machine
+## State Machine
 
-## HandleState()
+### HandleState()
 
 ```csharp
 private async Task HandleState(StateData data)
@@ -132,7 +132,7 @@ private async Task HandleState(StateData data)
 *   Pass our state to the ProcessStateData method and if everything is as we expect, we can call our handler methods
 *   Note that I am not yet handling redirects and other edge cases like the Microsoft UCWA JavaScript helpers.
 
-## ProcessStateData()
+### ProcessStateData()
 
 ```csharp
 private bool ProcessStateData(StateData data)
@@ -189,9 +189,9 @@ private bool ProcessStateData(StateData data)
 *   When the response from our web service call is a 2xx status code, we increment our state and move to the next step.
 *   When we get challenged for authentication, we also move to the next step but keep a count of how many times we have been challenged. Not yet handled properly.
 
-# Authenticate all the (Internet of) Things
+## Authenticate all the (Internet of) Things
 
-## StartAuthentication()
+### StartAuthentication()
 
 ```csharp
 private async Task StartAuthentication(StateData data)
@@ -213,7 +213,7 @@ private async Task StartAuthentication(StateData data)
 
 *   Make a request to the user URL, obtained using lyncdiscover, and get the authentication headers as this is where our OAuth URL is obtained.
 
-## HandleAuthorization()
+### HandleAuthorization()
 
 ```csharp
 private async Task HandleAuthorization(StateData data)
@@ -266,7 +266,7 @@ private async Task HandleAuthorization(StateData data)
 *   Retrieve OAuth token for the user and application from JSON response.
 *   Now that we have our OAuth token, we can  authenticate with UCWA in the next step.
 
-## Authenticate()
+### Authenticate()
 
 ```csharp
 private async Task Authenticate(StateData data)
@@ -297,7 +297,7 @@ private async Task Authenticate(StateData data)
 *   Authenticate to UCWA using the OAuth token from the previous step.
 *   Retrieve the URL that will be used in the next step.
 
-## CreateApplication()
+### CreateApplication()
 
 We must register/create an application on the UCWA server so that we can call API functions or receive event notifications.
 
@@ -358,7 +358,7 @@ private async Task CreateApplication(StateData data)
 *   If the Application URL and OAuth URL domain do not match, then we expect to get challenged to authenticate again and reset the state machine back.
 *   When the application is created, we deserialise the data returned and cache it for our application to use.
 
-## MakeMeAvailable()
+### MakeMeAvailable()
 
 We need this step so that we can receive events. When I left this step out, there was much head scratching.
 
@@ -400,12 +400,12 @@ private async Task MakeMeAvailable(StateData data)
 *   Post serialised data to "MakeMeAvailable" URI.
 *   Recursive call to HandleState.
 
-# Demo
+## Demo
 
 A quick video of the authentication service used to get Skype for Business (Lync) presence from the server (with Events) using a Raspberry Pi 2 with Windows 10 IoT.
 
 {% include embed/youtube.html id='9MhUzSouJgs' %}
 
-# Download
+## Download
 
 [UCWA Authentication Service](/assets/misc/authenticationservice.zip) (C#)

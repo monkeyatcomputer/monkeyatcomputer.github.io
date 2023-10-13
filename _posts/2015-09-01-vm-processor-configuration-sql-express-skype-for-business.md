@@ -6,7 +6,7 @@ description: "Using IIS application initialization feature to keep Skype for Bus
 image: "/assets/img/vspherecores.png"
 ---
 
-### Problem
+## Problem
 While investigating an SQL issue with a customers Lync environment, discovered the following in the local SQL Express instance error logs:
 
 ~~~~
@@ -27,7 +27,7 @@ This customer had configured their VMware guest as a single socket per core base
 
 Not usually a bad idea except when licensing restrictions require a different configuration.
 
-### Solution
+## Solution
 After a scheduled outage and some reconfiguration, our SQL Server Express instances have access to the expected number of cores:
 
 ~~~~

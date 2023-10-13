@@ -6,7 +6,7 @@ image:
   path: "/assets/img/powershell.jpg"
   alt: "PowerShell script to help configure Cisco IOS DHCP for Skype for Business and Lync devices"
 ---
-### Introduction
+## Introduction
 
 While designing a Skype for Business deployment for a customer, a requirement was discovered that meant we would need to provide a DHCP configuration to their WAN vendor. Each of the sites would be using Polycom VVX devices with IP addresses obtained from a Cisco router.
 
@@ -14,7 +14,7 @@ While designing a Skype for Business deployment for a customer, a requirement wa
 
 Introducing my first non-commercial contribution to the internets: Get-CsCiscoIosDhcp.ps1
 
-### Creating the Configuration
+## Creating the Configuration
 
 Fire up PowerShell and run the script:
 
@@ -57,15 +57,15 @@ option 120 hex 000373697007636f6e746f736f03636f6d00
 option 43 hex 010c4d532d55432d436c69656e7402056874747073030f7369702e636f6e746f736f2e636f6d040334343305252f4365727450726f762f4365727450726f766973696f6e696e67536572766963652e737663
 -------------------------------------------------------
 ```
-### Revision History
+## Revision History
 
 v0.1: 19 July 2015: Initial release
 
-### Download
+## Download
 
 [Download Get-CsCiscoIosDhcp.ps1](/assets/misc/get-csciscoiosdhcp.zip "Download")
 
-### Credits
+## Credits
 
 Configuring a Cisco ISR861’s DHCP Service for Lync Edition Handset - [https://neillpert.wordpress.com/2011/11/30/configuring-a-cisco-isr861s-dhcp-service-for-lync-edition-handsets/](https://neillpert.wordpress.com/2011/11/30/configuring-a-cisco-isr861s-dhcp-service-for-lync-edition-handsets/ "Configuring a Cisco ISR861’s DHCP Service for Lync Edition Handset")
 
