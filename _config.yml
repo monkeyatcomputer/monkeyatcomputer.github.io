@@ -90,7 +90,7 @@ avatar: "/assets/img/logo.png"
 toc: true
 
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -100,7 +100,7 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
+    repo: monkeyatcomputer/monkeyatcomputer.github.io
     repo_id:
     category:
     category_id:
@@ -146,7 +146,7 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: false
+      comments: true
       toc: true
   - scope:
       path: _drafts
@@ -158,6 +158,7 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+      comments: false
   - scope:
       path: "assets/img"
     values:
