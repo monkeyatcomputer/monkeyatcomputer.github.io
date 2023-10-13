@@ -1,9 +1,11 @@
 ---
 permalink: /windows-10-iot-adafruit-lpd8806-rgb-led-strip
 title: "Windows 10 IoT and Adafruit LPD8806 RGB LED Strip"
-subHeading: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
 description: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
-heroImage: "/assets/img/lpd8806.jpg"
+image: 
+  path: "/assets/img/lpd8806.jpg"
+  lqip:
+  alt: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
 ---
 
 ### Introduction
@@ -37,7 +39,7 @@ Already had wires soldiered to the LED strip from previous experiments ([Adafrui
 
 Here is the C# code for the top-level constructor and initialisation function. Have had to move SPI initialisation to its own method so we can handle the async calls.
 
-```
+```csharp
 public class AdaFruitLPD8806 : IDisposable
 {
     private const int bytesPerPixel = 3;
@@ -99,7 +101,7 @@ Next, we take a closer look at the SPI initialisation function.
 
 The SPI bus on the Raspberry Pi 2 is used to send a byte array of encoded RGB levels for each of the LEDs on the string and needs to be configured before we can use it.
 
-```
+```csharp
 private async Task InitSpi()
 {
     try
@@ -130,7 +132,7 @@ Now that the SPI device is initialised, we can send some bytes to our LED strip.
 
 #### SetColor()
 
-```
+```csharp
 // Sets the color of the entire strip
 public void SetColor(byte red, byte green, byte blue)
 {
@@ -147,7 +149,7 @@ public void SetColor(byte red, byte green, byte blue)
 
 #### Refresh()
 
-```
+```csharp
 // Send the internal pixel buffer to the strip
 public void Refresh()
 {
@@ -174,10 +176,12 @@ public void Refresh()
 Took a flash photo and forgot about the Raspberry Pi 2's kryptonite. Windows IoT failed hard. Need to get a Pi case.
 
 ![Raspberry Pi2 LPD8806](/assets/img/lpd8806-pi.jpg)
+_Raspberry Pi2 with LPD8806_
 
 A basic XAML GUI with Caliburn.Micro and Autofac.
 
 ![Windows IoT](/assets/img/lpd8806-ui.jpg)
+_Windows IoT XAML GUI_
 
 ### Download
 

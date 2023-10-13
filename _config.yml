@@ -1,15 +1,17 @@
 # Site settings
 title: tristangriffiths.net
 title_separator: "|"
-description: The personal blog of Tristan Griffiths - IT Jebus
+tagline: The personal blog of Tristan Griffiths - IT type person
 encoding: utf-8
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 # Outputting
 permalink: /:title
 paginate: 5 # amount of posts to show
 paginate_path: /page:num
+language: en
 timezone: "Australia/Melbourne"
 
 include: 
@@ -17,6 +19,8 @@ include:
 
 # Exclude from processing
 exclude: 
+  - "*.gem"
+  - "*.gemspec"
   - LICENSE
   - CNAME
   - README.md
@@ -28,6 +32,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - rollup.config.js
+  - package*.json
 
 # Plugins
 plugins:
@@ -35,6 +41,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-archives
   - jekyll-include-cache
 
 whitelist:
@@ -42,20 +51,143 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-archives
   - jekyll-include-cache
+
+url: "https://tristangriffiths.net"
+
+github:
+  username: monkeyatcomputer
+
+twitter:
+  username:
+
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: Tristan Griffiths
+  email: tgriffiths@gmail.com
+  links:
+    # The first element serves as the copyright owner's link
+    - https://github.com/monkeyatcomputer
+    - https://www.linkedin.com/in/trgriffiths/
+
+google_site_verification: # fill in to your verification string
+
+google_analytics:
+  id: # fill in your Google Analytics ID
+
+theme_mode: dark
+
+img_cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar: "/assets/img/logo_transparent.png"
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  # The active options are as follows:
+  disqus:
+    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # utterances settings › https://utteranc.es/
+  utterances:
+    repo: # <gh-username>/<repo>
+    issue_term: # < url | pathname | title | ...>
+  # Giscus options › https://giscus.app
+  giscus:
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    input_position: # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: # optional, default to the value of `1`
+
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    # specify the Jekyll environment, empty means both
+    # only works if `assets.self_host.enabled` is 'true'
+    env: # [development|production]
+
+pwa:
+  enabled: true # the option for PWA feature
+
+paginate: 10
+
+# The base URL of your site
+baseurl: ""
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
       path: ""
       type: posts
     values:
-      layout: article
+      layout: post
+      comments: false
+      toc: true
   - scope:
-      path: "_pages"
-      type: pages
+      path: _drafts
     values:
-      layout: text-page
+      comments: false
+  - scope:
+      path: ""
+      type: tabs # see `site.collections`
+    values:
+      layout: page
+      permalink: /:title/
   - scope:
       path: "assets/img"
     values:
       image: true
+  - scope:
+      path: assets/img/favicons
+    values:
+      swcache: true
+  - scope:
+      path: assets/js/dist
+    values:
+      swcache: true
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

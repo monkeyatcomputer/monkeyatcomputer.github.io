@@ -3,7 +3,7 @@ permalink: /live-from-github-pages
 title: "Live from GitHub Pages"
 subHeading: "Maybe not live... Statically perhaps?"
 description: "Yet another blog running on GitHub pages with Jekyll"
-heroImage: "/assets/img/home-hero.jpg"
+image: "/assets/img/home-hero.jpg"
 ---
 
 Got tired of keeping Windows, Umbraco and Let's Encrypt running smoothly.

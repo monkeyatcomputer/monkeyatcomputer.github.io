@@ -7,9 +7,8 @@ It is magically transformed by [Jekyll](https://jekyllrb.com/) in to a static si
 The following directories and their contents are copyright Tristan Griffiths. You may not reuse anything therein without my permission:
 
 * \_posts/
-* \_pages/
 * assets/img/
 
-All other directories and files are MIT Licensed. Feel free to use the HTML and CSS as you please. If you do use them, a link back to https://github.com/monkeyatcomputer/ would be appreciated, but is not required.
+All other directories and files are published under the [MIT License](LICENSE). Feel free to use the HTML and CSS as you please. If you do use them, a link back to https://github.com/monkeyatcomputer/ would be appreciated, but is not required.
 
 ![Jekyll Deploy](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/workflows/Jekyll%20Deploy/badge.svg?branch=master)
