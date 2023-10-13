@@ -35,4 +35,4 @@ Not a lot really. The feature had only just become available to Microsoft Teams 
 
 ## What's Next?
 
-Microsoft has not provided any timeline for when Intelliframe support might return. However, it's reasonable to assume that the feature will make a comeback once what the issue that caused the feature to be disabled are addressed. In the meantime, users will just have to live with a single view of in-room participants.
+Microsoft has not provided a specific timeline regarding the potential rreappearance of Intelliframe support. Nevertheless, it is logical to anticipate that this feature will be reinstated once the underlying issues leading to its temporary suspension are successfully resolved.
