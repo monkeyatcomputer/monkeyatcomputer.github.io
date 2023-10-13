@@ -11,7 +11,7 @@ highlighter: rouge
 permalink: /:title
 paginate: 5 # amount of posts to show
 paginate_path: /page:num
-language: en
+lang: en
 timezone: "Australia/Melbourne"
 
 include: 
