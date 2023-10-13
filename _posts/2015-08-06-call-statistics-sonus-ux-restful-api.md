@@ -6,7 +6,7 @@ image:
   path: "/assets/img/sonus-monitor.jpg"
   alt: "We all love statistics"
 categories: [Unified Communications, Monitoring]
-tags: [ribbon, sonus, rest, api, prtg]
+tags: [ribbon, sonus, prtg]
 ---
 
 ## Introduction

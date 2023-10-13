@@ -6,7 +6,7 @@ image:
   path: "/assets/img/powershell.jpg"
   alt: "PowerShell script to help configure Cisco IOS DHCP for Skype for Business and Lync devices"
 categories: [Unified Communications]
-tags: [skype for business, lync, dhcp, cisco ios, dhcp]
+tags: [skype for business, dhcp, cisco ios, dhcp]
 ---
 
 ## Introduction

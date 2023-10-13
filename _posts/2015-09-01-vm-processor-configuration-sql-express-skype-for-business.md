@@ -6,7 +6,7 @@ image:
     path: "/assets/img/vspherecores.png"
     alt: "A lesson in Microsoft licensing"
 categories: [Unified Communications, Monitoring]
-tags: [skype for business, sql server, sql server express]
+tags: [skype for business, sql server]
 ---
 
 ## Problem
