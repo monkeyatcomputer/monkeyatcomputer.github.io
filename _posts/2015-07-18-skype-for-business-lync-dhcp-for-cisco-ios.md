@@ -5,7 +5,10 @@ description: "PowerShell script to help configure Cisco IOS DHCP for Skype for B
 image:
   path: "/assets/img/powershell.jpg"
   alt: "PowerShell script to help configure Cisco IOS DHCP for Skype for Business and Lync devices"
+categories: [Unified Communications]
+tags: [skype for business, sfb, lync, dhcp, cisco ios, dhcp]
 ---
+
 ## Introduction
 
 While designing a Skype for Business deployment for a customer, a requirement was discovered that meant we would need to provide a DHCP configuration to their WAN vendor. Each of the sites would be using Polycom VVX devices with IP addresses obtained from a Cisco router.

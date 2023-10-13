@@ -4,6 +4,9 @@ title: "Presence using the Unified Communications Web API (UCWA) "
 description: "More JSON than you can poke 6 authentication steps at"
 image:
   path: "/assets/img/presence.jpg"
+  alt: "More JSON than you can poke 6 authentication steps at"
+categories: [Unified Communications, UCWA]
+tags: [skype for business, sfb, ucwa, unified communications]
 ---
 
 ## Introduction

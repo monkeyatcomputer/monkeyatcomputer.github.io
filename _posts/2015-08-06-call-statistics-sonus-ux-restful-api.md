@@ -1,9 +1,12 @@
 ---
 permalink: /call-statistics-sonus-ux-restful-api
 title: "Call Statistics from Sonus UX 1000/2000 using the RESTful API"
-subHeading: "We all love statistics"
 description: "We all love statistics"
-image: "/assets/img/sonus-monitor.jpg"
+image:
+  path: "/assets/img/sonus-monitor.jpg"
+  alt: "We all love statistics"
+categories: [Unified Communications, Monitoring]
+tags: [ribbon, sonus, rest, api, prtg]
 ---
 
 ## Introduction

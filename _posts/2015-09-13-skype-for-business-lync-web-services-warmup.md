@@ -1,9 +1,12 @@
 ---
 permalink: /skype-for-business-lync-web-services-warmup
 title: "Skype for Business (Lync) Web Services Warmup"
-subHeading: "Application Initialisation is my new favourite Windows technology"
 description: "Using IIS application initialization feature to keep Skype for Business (Lync) web services running"
-image: "/assets/img/iispreload.png"
+image:
+    path: "/assets/img/iispreload.png"
+    alt: "Application Initialization is my new favourite Windows technology"
+categories: [Unified Communications, Monitoring]
+tags: [skype for business, iis, application initialization]
 ---
 
 ## Problem
