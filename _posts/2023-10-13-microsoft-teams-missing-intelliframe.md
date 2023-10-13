@@ -24,7 +24,10 @@ A single, broad video of in-room attendees – the current standard – makes it
 In a surprising move, and without any announcement, it appears that Microsoft has taken Intelliframe away from us, only weeks after the feature became available. Why did Microsoft make this move? The only confirmation we've had is from a support ticket with no explanation given.
 
 ![Video recognition missing](/assets/img/teams-recognition.jpg)
-_Video recognition settings have vanished!_
+_How my Teams recognition settings appear_
+
+![Video recognition missing](/assets/img/teams-recognition-2.jpg)
+_What we're supposed to see_
 
 ## What Does This Mean for Users?
 
