@@ -6,6 +6,7 @@ image:
   path: "/assets/img/home-hero.jpg"
   alt: "It's not that interesting"
 order: 4
+layout: page
 ---
 
 ## The Blog
@@ -33,4 +34,4 @@ The owner of "tristangriffiths.net" will not be liable for any errors or omissio
 
 Any and all statements and opinions expressed are solely my own and do not represent that of any organization I may be employed by, contracted to, or any organisation tied to the products, solutions or technologies discussed.
 
-For any questions related to this site, my email address is tgriffiths@gmail.com.
+For any questions related to this site, leave a comment on [GitHub Discussions](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/discussions).
