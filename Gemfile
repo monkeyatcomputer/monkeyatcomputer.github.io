@@ -4,12 +4,14 @@ source "https://rubygems.org"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "activesupport", ">= 6.0.3.1"
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
-gem "jekyll", "~> 4.0"
-gem "jekyll-paginate"
+gem "wdm", "~> 0.1.1" if Gem.win_platform?
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+gem "jekyll", "~> 4.2"
+gem "jekyll-paginate", "~> 1.1"
 gem "jekyll-sitemap"
 gem "jekyll-gist"
 gem "jekyll-feed"
-gem "jemoji"
-gem "jekyll-include-cache"
-gem "jekyll-algolia"
+gem "jekyll-seo-tag", "~> 2.7"
+gem "jekyll-redirect-from", "~> 0.16"
+gem "jekyll-archives", "~> 2.2"
+gem "jekyll-include-cache", "~> 0.2"

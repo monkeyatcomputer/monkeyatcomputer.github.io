@@ -1,67 +1,99 @@
-{%- if site.url -%}
-  {%- assign seo_url = site.url | append: site.baseurl -%}
-{%- endif -%}
-{%- assign seo_url = seo_url | default: site.github.url -%}
+<!-- The Head -->
 
-{%- if page.title -%}
-  {%- assign seo_title = page.title | append: " \| " | append: site.title -%}
-{%- endif -%}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  >
 
-{%- if seo_title -%}
-  {%- assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once -%}
-{%- endif -%}
+  {% capture seo_tags %}
+    {% seo title=false %}
+  {% endcapture %}
 
-{% if page.canonical_url %}
-  {%- assign canonical_url = page.canonical_url %}
-{% else %}
-  {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
-{% endif %}
+  {% if page.image %}
+    {% assign img = page.image.path | default: page.image %}
 
-{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
-{%- if seo_description -%}
-  {%- assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once -%}
-{%- endif -%}
+    {% unless img contains '://' %}
+      {% assign img_path = page.img_path | append: '/' | append: img | replace: '//', '/' %}
+      {% capture target %}"{{ img | absolute_url }}"{% endcapture %}
 
-{%- assign author = page.author | default: page.authors[0] | default: site.author -%}
-{%- assign author = site.data.authors[author] | default: author -%}
+      {% if site.img_cdn contains '//' %}
+        <!-- it's a cross-origin URL -->
+        {% capture replacement %}"{{ site.img_cdn }}{{ img_path }}"{% endcapture %}
+      {% else %}
+        <!-- it's a local file path -->
+        {%- capture replacement -%}
+          "{{ site.img_cdn | append: '/' | append: img_path | replace: '//', '/' | absolute_url }}"
+        {%- endcapture -%}
+      {% endif %}
 
-{%- if page.date -%}
-  {%- assign og_type = "article" -%}
-{%- else -%}
-  {%- assign og_type = "website" -%}
-{%- endif -%}
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>{{ seo_title }}</title>
-<meta name="description" content="{{ seo_description }}"/>
-{% if author.name %}<meta name="author" content="{{ author.name | default: author }}">{% endif %}
-{% feed_meta %}
-<meta property="og:type" content="{{ og_type }}">
-<meta property="og:locale" content="en_AU">
-<meta property="og:site_name" content="tristangriffiths.net">
-<meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
-<meta property="og:url" content="{{ canonical_url }}">
-{% if page.excerpt %}<meta property="og:description" content="{{ seo_description }}">{% endif %}
-{% if page_large_image %}<meta property="og:image" content="{{ page_large_image }}">
-{% elsif page_teaser_image %}<meta property="og:image" content="{{ page_teaser_image }}">{% endif %}
-{% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-{% if og_type == "article" and page.last_modified_at %}<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-<link rel="canonical" href="{{ canonical_url }}">
-{% if paginator.previous_page %}<link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">{% endif %}
-{% if paginator.next_page %}<link rel="next" href="{{ paginator.next_page_path | absolute_url }}">{% endif %}
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<!-- Font Awesome CSS -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<!-- Purdy Fonts CSS -->
-<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-<!-- Site -->
-<link href="/assets/css/site.min.css" rel="stylesheet" type="text/css">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+      {% assign seo_tags = seo_tags | replace: target, replacement %}
+    {% endunless %}
+  {% endif %}
+
+  {{ seo_tags }}
+
+  <title>
+    {%- unless page.layout == 'home' -%}
+      {{ page.title | append: ' | ' }}
+    {%- endunless -%}
+    {{ site.title }}
+  </title>
+
+  {% include_cached favicons.html %}
+
+  {% if site.resources.ignore_env != jekyll.environment and site.resources.self_hosted %}
+    <link href="{{ site.data.origin[type].webfonts | relative_url }}" rel="stylesheet">
+
+  {% else %}
+    {% for cdn in site.data.origin[type].cdns %}
+      <link rel="preconnect" href="{{ cdn.url }}" {{ cdn.args }}>
+      <link rel="dns-prefetch" href="{{ cdn.url }}" {{ cdn.args }}>
+    {% endfor %}
+
+    <link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}">
+  {% endif %}
+
+  <!-- GA -->
+  {% if jekyll.environment == 'production' and site.google_analytics.id != empty and site.google_analytics.id %}
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  {% endif %}
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{{ site.data.origin[type].bootstrap.css | relative_url}}">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ site.data.origin[type].fontawesome.css | relative_url }}">
+
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+
+  {% if site.toc and page.toc %}
+    <link rel="stylesheet" href="{{ site.data.origin[type].toc.css | relative_url }}">
+  {% endif %}
+
+  {% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' %}
+    <link rel="stylesheet" href="{{ site.data.origin[type]['lazy-polyfill'].css | relative_url }}">
+  {% endif %}
+
+  {% if page.layout == 'page' or page.layout == 'post' %}
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="{{ site.data.origin[type].magnific-popup.css | relative_url }}">
+  {% endif %}
+
+  <!-- JavaScript -->
+
+  {% unless site.theme_mode %}
+    {% include mode-toggle.html %}
+  {% endunless %}
+
+  {% include metadata-hook.html %}
+</head>

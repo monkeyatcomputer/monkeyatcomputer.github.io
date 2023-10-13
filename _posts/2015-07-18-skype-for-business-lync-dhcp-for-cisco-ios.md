@@ -1,9 +1,10 @@
 ---
 permalink: /skype-for-business-lync-dhcp-for-cisco-ios
 title: "Skype for Business (Lync) device DHCP for Cisco IOS"
-subHeading: "Some PowerShell scripting"
 description: "PowerShell script to help configure Cisco IOS DHCP for Skype for Business and Lync devices"
-heroImage: "/assets/img/powershell.jpg"
+image:
+  path: "/assets/img/powershell.jpg"
+  alt: "PowerShell script to help configure Cisco IOS DHCP for Skype for Business and Lync devices"
 ---
 ### Introduction
 
@@ -17,13 +18,13 @@ Introducing my first non-commercial contribution to the internets: Get-CsCiscoIo
 
 Fire up PowerShell and run the script:
 
-```
+```powershell
 .\Get-CsCiscoIosDhcp.ps1
 ```
 
 The script will then ask for DHCP options needed for a successful Lync Phone Edition/Qualified deployment with PIN authentication:
 
-~~~~
+```console
 DNS suffix (eg. contoso.local): contoso.local
 UTC/GMT Offset Hours (eg. +/-10): 10
 NTP server address (eg. 192.168.0.1): 192.168.0.254
@@ -33,11 +34,11 @@ DNS search domain (eg. contoso.local): contoso.com
 DNS search domain (eg. contoso.local):
 SfB/Lync SIP FQDN (eg. sip.contoso.com): sip.contoso.com
 SfB/Lync Web FQDN (eg. lyncwebint.contoso.com): sip.contoso.com
-~~~~
+```
 
 Done:
 
-~~~~
+```console
 -------------------------------------------------------
 Cisco IOS DHCP configuration for the following values :
 -------------------------------------------------------
@@ -55,7 +56,7 @@ option 119 hex 07636f6e746f736f056c6f63616c0007636f6e746f736f03636f6d00
 option 120 hex 000373697007636f6e746f736f03636f6d00
 option 43 hex 010c4d532d55432d436c69656e7402056874747073030f7369702e636f6e746f736f2e636f6d040334343305252f4365727450726f762f4365727450726f766973696f6e696e67536572766963652e737663
 -------------------------------------------------------
-~~~~
+```
 ### Revision History
 
 v0.1: 19 July 2015: Initial release
