@@ -6,7 +6,7 @@ image:
   path: "/assets/img/lpd8806.jpg"
   alt: "Glowly, flexible, SPI-addressed LEDs using Windows 10 IoT on Raspberry Pi 2"
 categories: [Programming, IoT]
-tags: [iot, windows 10 iot, adafruit, lpd8806, rgb, raspberri pi 2]
+tags: [windows 10 iot, adafruit, lpd8806, rgb, raspberri pi 2]
 ---
 
 ## Introduction

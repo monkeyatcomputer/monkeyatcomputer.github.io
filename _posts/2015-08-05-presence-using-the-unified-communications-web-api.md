@@ -6,7 +6,7 @@ image:
   path: "/assets/img/presence.jpg"
   alt: "More JSON than you can poke 6 authentication steps at"
 categories: [Unified Communications, UCWA]
-tags: [skype for business, sfb, ucwa, unified communications]
+tags: [skype for business, ucwa, unified communications]
 ---
 
 ## Introduction
