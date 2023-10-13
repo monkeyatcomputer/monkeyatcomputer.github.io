@@ -1,10 +1,10 @@
 ---
 permalink: /new-blog-theme
-title: "New Blog Theme"
-description: "Updated blug theme 'Chirpy' for Jekyll"
+title: "Introducing the New Look with the Chirpy Jekyll Theme"
+description: "Updated blog theme 'Chirpy' for Jekyll"
 image:
     path: "/assets/img/chirpy-pc.png"
-    alt: "Updated blug theme 'Chirpy' for Jekyll"
+    alt: "Updated blog theme 'Chirpy' for Jekyll"
 categories: [Blogging]
 tags: [jekyll, theme, chirpy]
 ---
