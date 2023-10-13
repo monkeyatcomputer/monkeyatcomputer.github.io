@@ -11,4 +11,4 @@ The following directories and their contents are copyright Tristan Griffiths. Yo
 
 All other directories and files are published under the [MIT License](LICENSE). Feel free to use the HTML and CSS as you please. If you do use them, a link back to https://github.com/monkeyatcomputer/ would be appreciated, but is not required.
 
-![Jekyll Deploy](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/workflows/Jekyll%20Deploy/badge.svg?branch=master)
+[![Jekyll Deploy](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/actions/workflows/main.yml/badge.svg)](https://github.com/monkeyatcomputer/monkeyatcomputer.github.io/actions/workflows/main.yml)
