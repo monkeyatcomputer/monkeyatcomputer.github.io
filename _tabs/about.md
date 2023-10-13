@@ -24,7 +24,7 @@ Working with Windows, Skype for Business, Lync, Office 365, Exchange, Azure, HTM
 
 ## The Day Job
 
-Based in Melbourne Australia and, since 2011, a solutions consultant at [Generation-e](https://www.generation-e.com.au/), a leading Microsoft communications partner and reluctant accomplice.
+Based in Melbourne Australia and, since 2011, a solutions consultant at [Generation-e](https://www.generation-e.co/), a leading Microsoft communications partner and reluctant accomplice.
 
 ## The Disclaimer
 
