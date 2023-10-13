@@ -1,7 +1,7 @@
 ---
-permalink: /microsoft-teams-missing-intelliframe
-title: "Intelliframe  missing from Microsoft Teams"
-description: "A blog post about Microsoft removing Intelliframe from Microsoft Teams"
+permalink: /intelliframe-missing-from-microsoft-teams
+title: "Intelliframe missing from Microsoft Teams"
+description: "A blog post about Microsoft disabling Intelliframe on Microsoft Teams Rooms"
 image:
     path: "/assets/img/intelliframe.png"
     alt: "Intelliframe in Microsoft Teams"
