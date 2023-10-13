@@ -1,6 +1,6 @@
 ---
 permalink: /new-blog-theme
-title: "Introducing the New Look with the Chirpy Jekyll Theme"
+title: "Introducing a new look with the Chirpy Jekyll theme"
 description: "Updated blog theme 'Chirpy' for Jekyll"
 image:
     path: "/assets/img/chirpy-pc.png"
