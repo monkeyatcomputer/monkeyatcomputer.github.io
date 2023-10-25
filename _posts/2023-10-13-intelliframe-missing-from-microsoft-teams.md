@@ -7,7 +7,12 @@ image:
     alt: "Intelliframe in Microsoft Teams"
 categories: [Microsoft Teams]
 tags: [microsoft teams, intelliframe]
+last_modified_at: 2023-10-25
 ---
+
+## Update
+25/10/2023
+: The reappearance of Microsoft Teams Room IntelliFrame has been noted in the systems under our management. However, there is still no indication of the face recognition settings within Microsoft Teams on Windows.
 
 ## Introduction
 
