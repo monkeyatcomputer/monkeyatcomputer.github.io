@@ -177,8 +177,9 @@ sass:
 
 compress_html:
   clippings: all
-  comments: all
+  comments: ["<!-- ", " -->"]
   endings: all
+  startings: [html, head, body]
   profile: false
   blanklines: false
   ignore:
