@@ -25,8 +25,8 @@ last_modified_at: 2023-12-08
 
 Back in 2022, our family's adventurous spirit led us to acquire a second-hand 2017 Stoney Creek SC-FF6 camper trailer. While the trailer had undergone some modifications in its relatively short life, it still sported an essentially original build. The heart of its power system was a basic 12V electrical setup, equipped with two 100Ah AGM batteries and a CTEK M200 AC charger. This system was intended to support a 75L Evakool camp fridge, interior and exterior LED lighting, and two cold water pumps, each connected to its own tank. A somewhat risky addition was a 50A Anderson plug at the drawbar, connected directly to the batteries without any fuse – presumably an aftermarket upgrade by the previous owner for a Redarc DCDC charger linked to their tow vehicle.
 
-![Old CTEK M200 AC charger removed](/uploads/2023-12-08-camper-trailer-electrics-upgrade/old-charger.jpg){: width="500" }
-_Old CTEK M200 AC charger removed_
+![Our 2017 Stoney Creek SC-FF6 camper trailer](/uploads/2023-12-08-camper-trailer-electrics-upgrade/camper.jpg){: width="500" }
+_Our 2017 Stoney Creek SC-FF6 camper trailer_
 
 ## Identifying the Need for an Upgrade
 
@@ -56,14 +56,17 @@ The upgrade encompasses a comprehensive set of enhancements, including:
 
  These upgrades collectively aim to not only enhance the efficiency and safety of the camper trailer’s electrical system but also to prepare it for more demanding off-grid adventures.
 
+![Old CTEK M200 AC charger removed](/uploads/2023-12-08-camper-trailer-electrics-upgrade/old-charger.jpg){: width="250" }
+_Old CTEK M200 AC charger removed_
+
  ![VoltX 100Ah LiFePO4 Premium Plus battery](/uploads/2023-12-08-camper-trailer-electrics-upgrade/battery.jpg){: width="250" }
 _VoltX 100Ah LiFePO4 Premium Plus battery_
 
- ![Fuse arrangement](/uploads/2023-12-08-camper-trailer-electrics-upgrade/big-fuse.jpg){: width="250" }
-_Fuse arrangement_
-
  ![Distribution blocks](/uploads/2023-12-08-camper-trailer-electrics-upgrade/distribution-blocks.jpg){: width="250" }
 _Distribution blocks_
+
+ ![Fuse arrangement](/uploads/2023-12-08-camper-trailer-electrics-upgrade/big-fuse.jpg){: width="250" }
+_Fuse arrangement_
 
  ![Victron SmartSolar MPPT 100 \| 30 charge controller](/uploads/2023-12-08-camper-trailer-electrics-upgrade/mppt-charger.jpg){: width="250" }
 _Victron SmartSolar MPPT 100 \| 30 charge controller_
@@ -82,6 +85,11 @@ _Runtime test_
 
 ![Runtime test](/uploads/2023-12-08-camper-trailer-electrics-upgrade/runtime-test-2.jpg){: width="250" }
 _Runtime test_
+
+Our upgraded system now enables us to confidently venture off-grid, powered by a 160W folding solar panel. During a recent excursion to central Victoria, this solar charging arrangement exceeded our expectations. Impressively, it achieved a full charge by midday - a rapid recovery from the previous night's energy consumption. This efficiency not only highlights the effectiveness of our new setup but also underscores our capability for sustained off-grid adventures, free from the constraints of traditional power sources.
+
+![Solar charging](/uploads/2023-12-08-camper-trailer-electrics-upgrade/solar.jpg){: width="250" }
+_Solar charging_
 
 ## Future Plans
 
