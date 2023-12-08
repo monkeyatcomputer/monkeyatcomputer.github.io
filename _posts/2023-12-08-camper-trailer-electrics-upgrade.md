@@ -10,7 +10,12 @@ tags: [[camper trailer, victron, battery, lifepo4]]
 last_modified_at: 2023-12-08
 ---
 
-## The Disclaimer
+## The Beginning of a Journey
+
+Back in 2022, our family's adventurous spirit led us to acquire a second-hand 2017 Stoney Creek SC-FF6 camper trailer. While the trailer had undergone some modifications in its relatively short life, it still sported an essentially original build. The heart of its power system was a basic 12V electrical setup, equipped with two 100Ah AGM batteries and a CTEK M200 AC charger. This system was intended to support a 75L Evakool camp fridge, interior and exterior LED lighting, and two cold water pumps, each connected to its own tank. A somewhat risky addition was a 50A Anderson plug at the drawbar, connected directly to the batteries without any fuse – presumably an aftermarket upgrade by the previous owner for a Redarc DCDC charger linked to their tow vehicle.
+
+![Our 2017 Stoney Creek SC-FF6 camper trailer](/uploads/2023-12-08-camper-trailer-electrics-upgrade/camper.jpg){: width="500" }
+_Our 2017 Stoney Creek SC-FF6 camper trailer_
 
 > Please be advised that electrical work, particularly in recreational vehicles such as camper trailers, involves significant risks and should only be undertaken by qualified individuals. It is strongly recommended that any electrical upgrades, installations, or repairs be performed under the supervision of a certified electrician or a professional with relevant experience.
 >
@@ -20,13 +25,6 @@ last_modified_at: 2023-12-08
 >
 > This blog shares our personal experiences and is intended for informational purposes only. It should not be taken as professional advice. We are not responsible for any damage, injury, or legal issues that arise from using the information provided in our posts. Always seek professional assistance for electrical work to ensure safety and compliance.
 {: .prompt-danger }
-
-## The Beginning of a Journey
-
-Back in 2022, our family's adventurous spirit led us to acquire a second-hand 2017 Stoney Creek SC-FF6 camper trailer. While the trailer had undergone some modifications in its relatively short life, it still sported an essentially original build. The heart of its power system was a basic 12V electrical setup, equipped with two 100Ah AGM batteries and a CTEK M200 AC charger. This system was intended to support a 75L Evakool camp fridge, interior and exterior LED lighting, and two cold water pumps, each connected to its own tank. A somewhat risky addition was a 50A Anderson plug at the drawbar, connected directly to the batteries without any fuse – presumably an aftermarket upgrade by the previous owner for a Redarc DCDC charger linked to their tow vehicle.
-
-![Our 2017 Stoney Creek SC-FF6 camper trailer](/uploads/2023-12-08-camper-trailer-electrics-upgrade/camper.jpg){: width="500" }
-_Our 2017 Stoney Creek SC-FF6 camper trailer_
 
 ## Identifying the Need for an Upgrade
 
