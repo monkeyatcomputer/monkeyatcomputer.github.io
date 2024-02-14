@@ -142,7 +142,7 @@ When the Microsoft Teams Room OOBE appears, go ahead and set up the MTR as you n
 
 ![USB Boot](/uploads/2024-02-13-surface-hub-2s-with-teams-rooms-on-windows/shm-fig21.jpg){: width="250" }
 
-> Windows will need activation! Presumably the official process coming some time this year will include activation for Windows 10 IoT Enterprise.
+> Windows will need activation! Presumably the official process coming some time this year will include activation for Windows 11 IoT Enterprise.
 {: .prompt-warning }
 
 ## Final Thoughts
