@@ -6,7 +6,7 @@ image:
     path: "/assets/img/battery-leads.jpg"
     alt: "Battery Cables"
 categories: [Camper Trailer]
-tags: [[camper trailer, victron, battery, lifepo4]]
+tags: [camper trailer, victron, battery, lifepo4]
 last_modified_at: 2023-12-08
 ---
 
