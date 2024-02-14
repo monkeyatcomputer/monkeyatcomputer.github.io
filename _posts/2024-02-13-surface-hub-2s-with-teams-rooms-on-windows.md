@@ -92,7 +92,7 @@ $TestUefiV2 | Export-PfxCertificate -Password $pw -FilePath ".\SurfaceHubUefi.pf
 > For use with SEMM and Microsoft Surface UEFI Configurator, the certificate must be exported with the private key and with password protection. Microsoft Surface UEFI Configurator prompts you to select the SEMM certificate file (.pfx) and certificate password.
 {: .prompt-tip }
 
-> Keep the the certificate and password somewhere safe!
+> Keep the certificate and password somewhere safe!
 {: .prompt-danger }
 
 ## Create UEFI Configuration USB
