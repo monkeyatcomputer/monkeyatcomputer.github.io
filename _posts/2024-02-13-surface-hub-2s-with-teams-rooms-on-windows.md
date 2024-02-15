@@ -18,6 +18,7 @@ Microsoft have delivered on the new Surface Hub 3 and the Surface Hub 2S upgrade
 What follows is how I've managed to get our Surface Hub 2S running the Microsoft Teams Rooms on Windows experience. It goes without saying that there are some risks with this unsupported approach, so before we begin, a disclaimer...
 
 > Please be advised that applying the Microsoft Teams Rooms on Windows experience to a Surface Hub 2S device through methods not officially supported by Microsoft involves significant risks and potential drawbacks. Users who choose to pursue these methods do so at their own risk, understanding that:
+> **Windows Activation**: You will need to supply your own Windows 11 Enterprise key the same as if you were to convert a Surface Hub to Windows 10/11 Pro or Enterprise. Surface Hub 2S has the Windows 10 Team key baked in to the UEFI BIOS but not Windows 11 IoT Enterprise.
 > 
 > **Voided Warranty**: Implementing an unsupported configuration may void any remaining warranty on the Surface Hub 2S. Microsoft may not cover damages or issues arising from the use of unsupported software or hardware modifications.
 > 
