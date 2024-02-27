@@ -9,6 +9,10 @@ categories: [Microsoft Teams]
 tags: [microsoft teams, microsoft teams rooms, mtr, surface hub]
 ---
 
+## Update
+28/02/2024
+: Official upgrade process now available: [Surface Hub 2S migration to Microsoft Teams Rooms on Windows](https://techcommunity.microsoft.com/t5/surface-it-pro-blog/now-available-surface-hub-2s-migration-to-microsoft-teams-rooms/ba-p/4064081).
+
 ## The Microsoft Teams Rooms on Windows Experience
 
 Back in March 2023, Microsoft announced some updates to the Surface Hub line with: the new Surface Hub 3, a Surface Hub 2S upgrade pack, and a software-only upgrade for the Surface Hub 2S. The new device and upgrades are based on the same Microsoft Teams Rooms on Windows experience we're all too familiar with.
