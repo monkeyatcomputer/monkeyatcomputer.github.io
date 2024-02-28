@@ -7,6 +7,7 @@ image:
     alt: "Surface Hub"
 categories: [Microsoft Teams]
 tags: [microsoft teams, microsoft teams rooms, mtr, surface hub]
+last_modified_at: 2024-02-28
 ---
 
 ## Update
